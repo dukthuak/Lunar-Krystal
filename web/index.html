@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đức Thuận Bot - Trợ lý AI thông minh</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-background"></div>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <span class="logo-text">Đức Thuận</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Trang chủ</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#features" class="nav-link">
+                        <i class="fas fa-star"></i>
+                        <span>Tính năng</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#commands" class="nav-link">
+                        <i class="fas fa-terminal"></i>
+                        <span>Lệnh</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#demo" class="nav-link">
+                        <i class="fas fa-play"></i>
+                        <span>Demo</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Liên hệ</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <button class="control-btn theme-toggle" id="themeToggle" data-tooltip="Đổi theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="control-btn music-toggle" id="musicToggle" data-tooltip="Nhạc nền">
+                    <i class="fas fa-music"></i>
+                </button>
+                <button class="control-btn voice-toggle" id="voiceToggle" data-tooltip="Voice Chat">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="particle-field" id="particleField"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-sparkles"></i>
+                    <span>AI-Powered Bot</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">
+                        <span class="text-reveal">Đức Thuận</span>
+                    </span>
+                    <span class="title-line gradient-text">
+                        <span class="text-reveal">Trợ lý AI thông minh</span>
+                    </span>
+                </h1>
+                <p class="hero-description">
+                    Bot Facebook Messenger với hơn <span class="highlight">200+ lệnh</span> mạnh mẽ, 
+                    hỗ trợ đa ngôn ngữ và tích hợp AI tiên tiến
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Lệnh</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Hoạt động</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-glow" onclick="scrollToSection('features')">
+                        <i class="fas fa-rocket"></i>
+                        <span>Khám phá ngay</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                    <button class="btn btn-secondary btn-outline" onclick="scrollToSection('commands')">
+                        <i class="fas fa-list"></i>
+                        <span>Xem lệnh</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="bot-avatar">
+                    <div class="avatar-glow"></div>
+                    <div class="avatar-container">
+                        <div class="avatar-inner">
+                            <i class="fas fa-robot avatar-icon"></i>
+                        </div>
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-pulse"></div>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="element element-1" data-tooltip="AI Brain">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="element element-2" data-tooltip="Magic">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="element element-3" data-tooltip="Speed">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="element element-4" data-tooltip="Quality">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="element element-5" data-tooltip="Security">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="element element-6" data-tooltip="Chat">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <div class="scroll-line"></div>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <span class="scroll-text">Scroll để khám phá</span>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01</span>
+                Tính năng nổi bật
+            </h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Chat thông minh</h3>
+                    <p>Tích hợp AI để trò chuyện tự nhiên, hiểu ngữ cảnh và phản hồi chính xác</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>200+ Lệnh</h3>
+                    <p>Hơn 200 lệnh đa dạng từ giải trí, tiện ích đến quản lý nhóm</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Bảo mật cao</h3>
+                    <p>Mã hóa dữ liệu, bảo vệ thông tin người dùng an toàn tuyệt đối</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Đa ngôn ngữ</h3>
+                    <p>Hỗ trợ tiếng Việt, tiếng Anh và nhiều ngôn ngữ khác</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Dễ sử dụng</h3>
+                    <p>Giao diện thân thiện, dễ dàng tương tác qua Facebook Messenger</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3>Cập nhật liên tục</h3>
+                    <p>Luôn được cập nhật tính năng mới và cải thiện hiệu suất</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="200">0</div>
+                    <div class="stat-label">Lệnh</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="10000">0</div>
+                    <div class="stat-label">Người dùng</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50000">0</div>
+                    <div class="stat-label">Tin nhắn/ngày</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="99">0</div>
+                    <div class="stat-label">% Uptime</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commands Section -->
+    <section id="commands" class="commands">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02</span>
+                Danh sách lệnh
+            </h2>
+            <div class="commands-tabs">
+                <button class="tab-btn active" data-tab="entertainment">
+                    <i class="fas fa-gamepad"></i>
+                    Giải trí
+                </button>
+                <button class="tab-btn" data-tab="utility">
+                    <i class="fas fa-tools"></i>
+                    Tiện ích
+                </button>
+                <button class="tab-btn" data-tab="moderation">
+                    <i class="fas fa-user-shield"></i>
+                    Quản lý
+                </button>
+                <button class="tab-btn" data-tab="ai">
+                    <i class="fas fa-brain"></i>
+                    AI
+                </button>
+            </div>
+            <div class="commands-content">
+                <div class="tab-content active" id="entertainment">
+                    <div class="commands-grid">
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-music"></i></div>
+                            <div class="command-info">
+                                <h4>/music</h4>
+                                <p>Phát nhạc từ YouTube</p>
+                            </div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-image"></i></div>
+                            <div class="command-info">
+                                <h4>/anime</h4>
+                                <p>Ảnh anime ngẫu nhiên</p>
+                            </div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-dice"></i></div>
+                            <div class="command-info">
+                                <h4>/dice</h4>
+                                <p>Chơi xúc xắc</p>
+                            </div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-question"></i></div>
+                            <div class="command-info">
+                                <h4>/joke</h4>
+                                <p>Kể chuyện cười</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="utility">
+                    <div class="commands-grid">
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-search"></i></div>
+                            <div class="command-info">
+                                <h4>/search</h4>
+                                <p>Tìm kiếm thông tin</p>
+                            </div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-cloud-sun"></i></div>
+                            <div class="command-info">
+                                <h4>/weather</h4>
+                                <p>Dự báo thời tiết</p>
+                            </div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-calculator"></i></div>
+                            <div class="command-info">
+                                <h4>/calc</h4>
+                                <p>Máy tính</p>
+                            </div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-clock"></i></div>
+                            <div class="command-info">
+                                <h4>/time</h4>
+                                <p>Xem giờ hiện tại</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="moderation">
+                    <div class="commands-grid">
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-ban"></i></div>
+                            <div class="command-info">
+                                <h4>/ban</h4>
+                                <p>Cấm thành viên</p>
+                            </div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-user-plus"></i></div>
+                            <div class="command-info">
+                                <h4>/kick</h4>
+                                <p>Đuổi thành viên</p>
+                            </div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-comment-slash"></i></div>
+                            <div class="command-info">
+                                <h4>/mute</h4>
+                                <p>Khóa mic thành viên</p>
+                            </div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-list"></i></div>
+                            <div class="command-info">
+                                <h4>/members</h4>
+                                <p>Danh sách thành viên</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="ai">
+                    <div class="commands-grid">
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-robot"></i></div>
+                            <div class="command-info">
+                                <h4>/ai</h4>
+                                <p>Trò chuyện với AI</p>
+                            </div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-image"></i></div>
+                            <div class="command-info">
+                                <h4>/generate</h4>
+                                <p>Tạo ảnh bằng AI</p>
+                            </div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-language"></i></div>
+                            <div class="command-info">
+                                <h4>/translate</h4>
+                                <p>Dịch văn bản</p>
+                            </div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-icon"><i class="fas fa-lightbulb"></i></div>
+                            <div class="command-info">
+                                <h4>/suggest</h4>
+                                <p>Gợi ý thông minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="games">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03</span>
+                Mini Games
+            </h2>
+            <div class="games-grid">
+                <div class="game-card" data-game="snake">
+                    <div class="game-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Snake Game</h3>
+                    <p>Chơi game rắn săn mồi cổ điển</p>
+                    <button class="play-btn">Chơi ngay</button>
+                </div>
+                <div class="game-card" data-game="memory">
+                    <div class="game-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Memory Game</h3>
+                    <p>Test trí nhớ với game ghép hình</p>
+                    <button class="play-btn">Chơi ngay</button>
+                </div>
+                <div class="game-card" data-game="typing">
+                    <div class="game-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3>Typing Test</h3>
+                    <p>Kiểm tra tốc độ gõ phím</p>
+                    <button class="play-btn">Chơi ngay</button>
+                </div>
+                <div class="game-card" data-game="quiz">
+                    <div class="game-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>AI Quiz</h3>
+                    <p>Trả lời câu hỏi về AI và công nghệ</p>
+                    <button class="play-btn">Chơi ngay</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Avatar Section -->
+    <section class="ai-avatar">
+        <div class="container">
+            <div class="avatar-container">
+                <div class="avatar-3d" id="avatar3D">
+                    <div class="avatar-face">
+                        <div class="eye left-eye"></div>
+                        <div class="eye right-eye"></div>
+                        <div class="mouth"></div>
+                    </div>
+                    <div class="avatar-body">
+                        <div class="avatar-arms">
+                            <div class="arm left-arm"></div>
+                            <div class="arm right-arm"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="avatar-controls">
+                    <h3>Điều khiển AI Avatar</h3>
+                    <div class="control-buttons">
+                        <button class="control-btn" data-action="wave">
+                            <i class="fas fa-hand-paper"></i>
+                            Vẫy tay
+                        </button>
+                        <button class="control-btn" data-action="dance">
+                            <i class="fas fa-music"></i>
+                            Nhảy múa
+                        </button>
+                        <button class="control-btn" data-action="speak">
+                            <i class="fas fa-comment"></i>
+                            Nói chuyện
+                        </button>
+                        <button class="control-btn" data-action="sleep">
+                            <i class="fas fa-bed"></i>
+                            Ngủ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather Widget -->
+    <section class="weather-widget">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">04</span>
+                Thời tiết & Crypto
+            </h2>
+            <div class="widgets-grid">
+                <div class="weather-card">
+                    <div class="weather-header">
+                        <h3>Thời tiết hiện tại</h3>
+                        <button class="refresh-btn" id="refreshWeather">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div class="weather-content">
+                        <div class="weather-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="weather-info">
+                            <div class="temperature">25°C</div>
+                            <div class="location">Hà Nội, Việt Nam</div>
+                            <div class="description">Nắng nhẹ</div>
+                        </div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span>Độ ẩm</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Gió</span>
+                            <span>5 km/h</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>UV</span>
+                            <span>3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="crypto-card">
+                    <div class="crypto-header">
+                        <h3>Giá Crypto</h3>
+                        <button class="refresh-btn" id="refreshCrypto">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div class="crypto-list">
+                        <div class="crypto-item">
+                            <div class="crypto-info">
+                                <div class="crypto-icon">₿</div>
+                                <div class="crypto-name">Bitcoin</div>
+                            </div>
+                            <div class="crypto-price">
+                                <div class="price">$45,230</div>
+                                <div class="change positive">+2.5%</div>
+                            </div>
+                        </div>
+                        <div class="crypto-item">
+                            <div class="crypto-info">
+                                <div class="crypto-icon">Ξ</div>
+                                <div class="crypto-name">Ethereum</div>
+                            </div>
+                            <div class="crypto-price">
+                                <div class="price">$3,120</div>
+                                <div class="change positive">+1.8%</div>
+                            </div>
+                        </div>
+                        <div class="crypto-item">
+                            <div class="crypto-info">
+                                <div class="crypto-icon">💎</div>
+                                <div class="crypto-name">Dogecoin</div>
+                            </div>
+                            <div class="crypto-price">
+                                <div class="price">$0.08</div>
+                                <div class="change negative">-0.5%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">05</span>
+                Demo Chat với Bot
+            </h2>
+            <div class="demo-content">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <div class="chat-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="chat-info">
+                            <h3>Đức Thuận Bot</h3>
+                            <span class="status online">Đang hoạt động</span>
+                        </div>
+                    </div>
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message bot-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <p>Xin chào! Tôi là Đức Thuận Bot. Bạn có thể hỏi tôi bất cứ điều gì!</p>
+                                <span class="message-time">Bây giờ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="chatInput" placeholder="Nhập tin nhắn...">
+                        <button id="sendBtn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="demo-features">
+                    <h3>Tính năng Demo</h3>
+                    <div class="feature-demo">
+                        <button class="demo-btn" data-command="/help">
+                            <i class="fas fa-question-circle"></i>
+                            Xem trợ giúp
+                        </button>
+                        <button class="demo-btn" data-command="/time">
+                            <i class="fas fa-clock"></i>
+                            Xem giờ
+                        </button>
+                        <button class="demo-btn" data-command="/joke">
+                            <i class="fas fa-laugh"></i>
+                            Kể chuyện cười
+                        </button>
+                        <button class="demo-btn" data-command="/weather">
+                            <i class="fas fa-cloud-sun"></i>
+                            Dự báo thời tiết
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">06</span>
+                Liên hệ Admin
+            </h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Admin: Đức Thuận</h3>
+                        <p>Developer & Bot Creator</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <h3>Facebook</h3>
+                        <p>fb.com/dukthuak</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>hoangducthuan0804@gmail.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>github.com/dukthuak</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Gửi tin nhắn cho Admin</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Tên của bạn" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Nội dung tin nhắn" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Gửi tin nhắn
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-robot"></i>
+                    <span>Đức Thuận Bot</span>
+                </div>
+                <p>&copy; 2025 Đức Thuận. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+        <div class="music-info">
+            <div class="music-cover">
+                <i class="fas fa-music"></i>
+            </div>
+            <div class="music-details">
+                <h4>Lunar Krystal Theme</h4>
+                <p>Background Music</p>
+            </div>
+        </div>
+        <div class="music-controls">
+            <button class="music-btn" id="prevBtn">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button class="music-btn play-pause" id="playPauseBtn">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="music-btn" id="nextBtn">
+                <i class="fas fa-step-forward"></i>
+            </button>
+        </div>
+        <div class="music-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="time-info">
+                <span id="currentTime">0:00</span>
+                <span id="totalTime">3:45</span>
+            </div>
+        </div>
+        <button class="music-close" id="musicClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <button class="fab" id="fabBtn">
+            <i class="fas fa-plus"></i>
+        </button>
+        <div class="fab-menu">
+            <button class="fab-item" data-action="scroll-top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            <button class="fab-item" data-action="toggle-music">
+                <i class="fas fa-music"></i>
+            </button>
+            <button class="fab-item" data-action="toggle-theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="fab-item" data-action="chat-demo">
+                <i class="fas fa-comments"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Game Modal -->
+    <div class="game-modal" id="gameModal">
+        <div class="game-content">
+            <div class="game-header">
+                <h3 id="gameTitle">Game</h3>
+                <button class="close-game" id="closeGame">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="game-area" id="gameArea">
+                <!-- Game content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Voice Chat Modal -->
+    <div class="voice-modal" id="voiceModal">
+        <div class="voice-content">
+            <div class="voice-header">
+                <h3>Voice Chat với Bot</h3>
+                <button class="close-voice" id="closeVoice">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="voice-area">
+                <div class="voice-visualizer">
+                    <div class="voice-waves">
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                    </div>
+                </div>
+                <div class="voice-controls">
+                    <button class="voice-btn" id="startVoice">
+                        <i class="fas fa-microphone"></i>
+                        Bắt đầu nói
+                    </button>
+                    <button class="voice-btn" id="stopVoice" disabled>
+                        <i class="fas fa-stop"></i>
+                        Dừng
+                    </button>
+                </div>
+                <div class="voice-status" id="voiceStatus">
+                    Nhấn nút để bắt đầu nói chuyện với bot
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="loading-text">
+                <h2>Đức Thuận Bot</h2>
+                <p>Đang tải...</p>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

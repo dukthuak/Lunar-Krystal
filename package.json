@@ -4,9 +4,17 @@
   "description": "Developed by LunarKrystal",
   "main": "mirai.js",
   "scripts": {
-    "start": "node index",
+    "start": "node main.js",
+    "bot": "node main.js",
+    "web": "cd web && python -m http.server 8080",
+    "web-php": "cd web && php -S localhost:8080",
+    "start-all": "concurrently \"npm run bot\" \"npm run web\"",
+    "lunar": "powershell -ExecutionPolicy Bypass -File start_lunar.ps1",
+    "run": "run.bat",
     "login": "node login",
-    "test": "node --trace-warnings --use_strict --async-stack-traces mirai"
+    "test": "node --trace-warnings --use_strict --async-stack-traces mirai",
+    "build": "npm install --production",
+    "render:start": "node main.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +39,7 @@
     "cheerio": "1.0.0-rc.12",
     "chess.js": "^1.0.0-beta.6",
     "child_process": "",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "crypto": "",
     "crypto-js": "",

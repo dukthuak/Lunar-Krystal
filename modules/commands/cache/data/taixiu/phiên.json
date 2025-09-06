@@ -495,5 +495,271 @@
         "dice1": 4,
         "dice2": 6,
         "dice3": 6
+    },
+    {
+        "phien": 73,
+        "result": "xỉu",
+        "dice1": 4,
+        "dice2": 1,
+        "dice3": 1
+    },
+    {
+        "phien": 74,
+        "result": "xỉu",
+        "dice1": 1,
+        "dice2": 2,
+        "dice3": 5
+    },
+    {
+        "phien": 75,
+        "result": "xỉu",
+        "dice1": 3,
+        "dice2": 1,
+        "dice3": 1
+    },
+    {
+        "phien": 76,
+        "result": "tài",
+        "dice1": 5,
+        "dice2": 6,
+        "dice3": 2
+    },
+    {
+        "phien": 77,
+        "result": "tài",
+        "dice1": 5,
+        "dice2": 5,
+        "dice3": 4
+    },
+    {
+        "phien": 78,
+        "result": "tài",
+        "dice1": 4,
+        "dice2": 6,
+        "dice3": 4
+    },
+    {
+        "phien": 79,
+        "result": "tài",
+        "dice1": 6,
+        "dice2": 3,
+        "dice3": 6
+    },
+    {
+        "phien": 80,
+        "result": "tài",
+        "dice1": 6,
+        "dice2": 3,
+        "dice3": 6
+    },
+    {
+        "phien": 81,
+        "result": "tài",
+        "dice1": 4,
+        "dice2": 6,
+        "dice3": 1
+    },
+    {
+        "phien": 82,
+        "result": "tài",
+        "dice1": 6,
+        "dice2": 6,
+        "dice3": 5
+    },
+    {
+        "phien": 83,
+        "result": "xỉu",
+        "dice1": 5,
+        "dice2": 2,
+        "dice3": 2
+    },
+    {
+        "phien": 84,
+        "result": "xỉu",
+        "dice1": 4,
+        "dice2": 3,
+        "dice3": 2
+    },
+    {
+        "phien": 85,
+        "result": "xỉu",
+        "dice1": 2,
+        "dice2": 4,
+        "dice3": 3
+    },
+    {
+        "phien": 86,
+        "result": "xỉu",
+        "dice1": 3,
+        "dice2": 2,
+        "dice3": 1
+    },
+    {
+        "phien": 87,
+        "result": "xỉu",
+        "dice1": 6,
+        "dice2": 2,
+        "dice3": 2
+    },
+    {
+        "phien": 88,
+        "result": "xỉu",
+        "dice1": 2,
+        "dice2": 2,
+        "dice3": 6
+    },
+    {
+        "phien": 89,
+        "result": "xỉu",
+        "dice1": 6,
+        "dice2": 1,
+        "dice3": 1
+    },
+    {
+        "phien": 90,
+        "result": "xỉu",
+        "dice1": 5,
+        "dice2": 3,
+        "dice3": 1
+    },
+    {
+        "phien": 91,
+        "result": "tài",
+        "dice1": 3,
+        "dice2": 6,
+        "dice3": 4
+    },
+    {
+        "phien": 92,
+        "result": "tài",
+        "dice1": 5,
+        "dice2": 2,
+        "dice3": 6
+    },
+    {
+        "phien": 93,
+        "result": "tài",
+        "dice1": 1,
+        "dice2": 5,
+        "dice3": 6
+    },
+    {
+        "phien": 94,
+        "result": "tài",
+        "dice1": 4,
+        "dice2": 2,
+        "dice3": 6
+    },
+    {
+        "phien": 95,
+        "result": "xỉu",
+        "dice1": 2,
+        "dice2": 4,
+        "dice3": 1
+    },
+    {
+        "phien": 96,
+        "result": "xỉu",
+        "dice1": 3,
+        "dice2": 3,
+        "dice3": 3
+    },
+    {
+        "phien": 97,
+        "result": "tài",
+        "dice1": 3,
+        "dice2": 6,
+        "dice3": 5
+    },
+    {
+        "phien": 98,
+        "result": "xỉu",
+        "dice1": 4,
+        "dice2": 1,
+        "dice3": 2
+    },
+    {
+        "phien": 99,
+        "result": "tài",
+        "dice1": 6,
+        "dice2": 4,
+        "dice3": 6
+    },
+    {
+        "phien": 100,
+        "result": "xỉu",
+        "dice1": 1,
+        "dice2": 4,
+        "dice3": 2
+    },
+    {
+        "phien": 101,
+        "result": "xỉu",
+        "dice1": 3,
+        "dice2": 4,
+        "dice3": 1
+    },
+    {
+        "phien": 102,
+        "result": "xỉu",
+        "dice1": 3,
+        "dice2": 5,
+        "dice3": 2
+    },
+    {
+        "phien": 103,
+        "result": "tài",
+        "dice1": 6,
+        "dice2": 6,
+        "dice3": 5
+    },
+    {
+        "phien": 104,
+        "result": "xỉu",
+        "dice1": 1,
+        "dice2": 2,
+        "dice3": 4
+    },
+    {
+        "phien": 105,
+        "result": "tài",
+        "dice1": 1,
+        "dice2": 5,
+        "dice3": 5
+    },
+    {
+        "phien": 106,
+        "result": "tài",
+        "dice1": 4,
+        "dice2": 4,
+        "dice3": 4
+    },
+    {
+        "phien": 107,
+        "result": "tài",
+        "dice1": 5,
+        "dice2": 5,
+        "dice3": 2
+    },
+    {
+        "phien": 108,
+        "result": "tài",
+        "dice1": 5,
+        "dice2": 6,
+        "dice3": 6
+    },
+    {
+        "phien": 109,
+        "result": "tài",
+        "dice1": 6,
+        "dice2": 5,
+        "dice3": 5
+    },
+    {
+        "phien": 110,
+        "result": "xỉu",
+        "dice1": 5,
+        "dice2": 3,
+        "dice3": 2
     }
 ]
