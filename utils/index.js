@@ -4,6 +4,7 @@ const os = require("os");
 const axios = require("axios");
 const config = require('../config.json');
 const package = require('../package.json');
+const permission = require('./permission');
 
 module.exports.getYoutube = async function(t, e, i) {
     require("ytdl-core");
@@ -157,3 +158,6 @@ module.exports.homeDir = function () {
 
   return [typeof os.homedir === 'function' ? os.homedir() : returnHome, typeSystem];
 }
+
+// Export permission functions
+module.exports.permission = permission;

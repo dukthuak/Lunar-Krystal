@@ -40,7 +40,7 @@ exports.handleReply = async function(o) {
     switch (_.type) {
         // code chọn admin để call
         case 'user_choose_admin': {
-            let admin_all = args[0].toLowerCase() == 'all'?config.ADMINBOT: args.filter($=>isFinite($)).map($=>config.ADMINBOT[$-1]).filter($=>!!$);
+            let admin_all = args[0].toLowerCase() == 'all'?global.config.ADMINBOT: args.filter($=>isFinite($)).map($=>global.config.ADMINBOT[$-1]).filter($=>!!$);
             if (admin_all == null)return send(`⚠️ Lựa chọn không hợp lệ.`);
             send(`📌 Reply tin nhắn này để nhập nội dung.`, (err, res)=> {
                 if (err)return console.log(err);
@@ -49,22 +49,22 @@ exports.handleReply = async function(o) {
                 res.event = o.event;
                 res.admin_all = admin_all;
                 res.is_call = true;
-                client.handleReply.push(res);
+                global.client.handleReply.push(res);
             });
         };
             break;
         // code sẽ chạy khi admin bot reply
         case 'admin_reply': {
             if (!body && !form_msg.attachment)return send(`❎ Chưa nhập nội dung`);
-            form_msg.body = `👤 Tên: ${data.userName.get(sid)}\n📝 Nội Dung: ${body || 'Không Có Nội Dung'}`;
+            form_msg.body = `👤 Tên: ${global.data.userName.get(sid)}\n📝 Nội Dung: ${body || 'Không Có Nội Dung'}`;
             o.api.sendMessage(form_msg, _.event.threadID, (err, res)=> {
                 if (err)return console.log(err);
                 res.type = 'user_call__reply';
                 res.name = exports.config.name;
                 res.event = o.event;
                 res.admin_all = [sid];
-                client.handleReply.push(res);
-                send(`✅ Đã phản hồi đến người dùng ${data.userName.get(_.event.senderID)}.`);
+                global.client.handleReply.push(res);
+                send(`✅ Đã phản hồi đến người dùng ${global.data.userName.get(_.event.senderID)}.`);
             },
                 _.event.messageID);
         }; break;
@@ -72,7 +72,7 @@ exports.handleReply = async function(o) {
         case 'user_call__reply': {
             if (!body && !form_msg.attachment)return send(`❎ Chưa nhập nội dung`);
             let count_success = 0;
-            form_msg.body = `[ USER ${_.is_call?'CALL': 'REPLY'} ]\n\n- Tên: ${data.userName.get(sid)}${!!tid && tid != sid ? '\n- Nhóm: '+data.threadInfo.get(tid).threadName: ''}\n- Nội Dung: ${body || 'Không Có Nội Dung.'}`;
+            form_msg.body = `[ USER ${_.is_call?'CALL': 'REPLY'} ]\n\n- Tên: ${global.data.userName.get(sid)}${!!tid && tid != sid ? '\n- Nhóm: '+global.data.threadInfo.get(tid).threadName: ''}\n- Nội Dung: ${body || 'Không Có Nội Dung.'}`;
             for (let admin_id of _.admin_all)try {
                 await new Promise((resolve, reject)=> {
                     o.api.sendMessage(form_msg, admin_id, (err, res)=> {
@@ -81,7 +81,7 @@ exports.handleReply = async function(o) {
                         res.name = exports.config.name;
                         res.event = o.event;
                         res.admin_all = _.admin_all;
-                        client.handleReply.push(res);
+                        global.client.handleReply.push(res);
                         resolve(res);
                     },
                         _.is_call?undefined: _.event.messageID);
@@ -91,7 +91,7 @@ exports.handleReply = async function(o) {
                 console.log(e);
             };
             let send_result_text = _.is_call
-            ?`✅ Đã liên hệ đến ${count_success} admin bot vui lòng đợi phản hồi`:`✅ Đã phản hồi đến Quản trị viên bot ${data.userName.get(_.admin_all[0])}.`;
+            ?`✅ Đã liên hệ đến ${count_success} admin bot vui lòng đợi phản hồi`:`✅ Đã phản hồi đến Quản trị viên bot ${global.data.userName.get(_.admin_all[0])}.`;
             send(send_result_text);
         };
             break;
@@ -102,17 +102,17 @@ exports.handleReply = async function(o) {
 exports.run = async function(o) {
     let send = (msg, callback)=>o.api.sendMessage(msg, o.event.threadID, callback, o.event.messageID);
     let attachment = [];
-    for (let admin_id of config.ADMINBOT)try {
+    for (let admin_id of global.config.ADMINBOT)try {
         attachment.push(await streamURL(link_avatar_fb(admin_id), 'jpg'));
     } catch (e) {};
     send({
-        body: (config.ADMINBOT || ['0']).map(($, i)=>`${i+1}. ${data.userName.get($)}\n🔗 Link: https://www.facebook.com/profile.php?id=${$}\n`).join('\n')+`\n\nReply (phản hồi) theo stt để chọn admin hỗ trợ bạn (cách nhau để chọn nhiều)`,
+        body: (global.config.ADMINBOT || ['0']).map(($, i)=>`${i+1}. ${global.data.userName.get($)}\n🔗 Link: https://www.facebook.com/profile.php?id=${$}\n`).join('\n')+`\n\nReply (phản hồi) theo stt để chọn admin hỗ trợ bạn (cách nhau để chọn nhiều)`,
         attachment,
     },
         (err, res)=>(
             res.type = 'user_choose_admin',
             res.name = exports.config.name,
             res.event = o.event,
-            client.handleReply.push(res)
+            global.client.handleReply.push(res)
         ));
 };

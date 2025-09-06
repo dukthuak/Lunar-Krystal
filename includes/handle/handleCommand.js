@@ -74,6 +74,25 @@ module.exports = function ({ api, models, Users, Threads, Currencies }) {
     var command = commands.get(commandName);
     fs.writeFileSync(usgPath, JSON.stringify(usages, null, 4));
 
+    // Kiểm tra quyền sử dụng bot trong nhóm (có thể bật/tắt)
+    if (command && global.config.permissionCheck !== false) {
+      const permissionCheck = global.utils.permission.checkCommandPermission(threadID, commandName, senderID);
+      
+      if (!permissionCheck.allowed) {
+        // Nếu nhóm chưa được kích hoạt, gửi thông báo kích hoạt
+        if (permissionCheck.reason === "not_activated") {
+          const activationMessage = global.utils.permission.createActivationMessage(threadID);
+          return api.sendMessage(activationMessage, threadID, messageID);
+        }
+        
+        // Gửi thông báo lỗi quyền
+        return api.sendMessage({
+          body: `❌ ${permissionCheck.message}`,
+          attachment: global.krystal.splice(0, 1)
+        }, threadID, messageID);
+      }
+    }
+
     if (!command) {
       var allCommandName = [];
       const commandValues = global.client.commands.keys();
